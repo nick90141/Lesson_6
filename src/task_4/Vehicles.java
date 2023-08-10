@@ -1,34 +1,23 @@
 package task_4;
 
 public enum Vehicles {
-    BMW(10000),
-    MERCEDES(11000),
-    HONDA(7000),
-    CHEVROLET(6000),
-    MAZDA(8000);
+    BMW("Черный", 10000),
+    MERCEDES("Белый", 11000),
+    HONDA("Серый", 7000),
+    CHEVROLET("Красный", 6000),
+    MAZDA("Бежевый", 8000);
+
+    private final String color;
     private final int price;
 
-    Vehicles(int price) {
+    Vehicles(String color, int price) {
+        this.color = color;
         this.price = price;
     }
-    public String getColor(){
-        switch (this){
-            case BMW:
-                return "Черный";
-            case MERCEDES:
-                return "Белый";
-            case HONDA:
-                return "Серый";
-            case CHEVROLET:
-                return "Красный";
-            case MAZDA:
-                return "Бежевый";
-        }
-        return null;
-    }
+
     @Override
     public String toString() {
-        return "Модель: " + name () + ", стоимость: " + price + ", цвет: " + getColor();
+        return "Модель: " + name() + ", стоимость: " + price + ", цвет: " + color;
     }
 }
 
